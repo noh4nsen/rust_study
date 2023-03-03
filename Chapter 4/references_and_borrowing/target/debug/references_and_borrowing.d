@@ -1,1 +1,0 @@
-C:\Users\noh4nsen\Desktop\Estudo\Rust\Chapter\ 4\references_and_borrowing\target\debug\references_and_borrowing.exe: C:\Users\noh4nsen\Desktop\Estudo\Rust\Chapter\ 4\references_and_borrowing\src\main.rs

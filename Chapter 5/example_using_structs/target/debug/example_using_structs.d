@@ -1,1 +1,0 @@
-C:\Users\noh4nsen\Desktop\Estudo\Rust\Rust_Official\Chapter\ 5\example_using_structs\target\debug\example_using_structs.exe: C:\Users\noh4nsen\Desktop\Estudo\Rust\Rust_Official\Chapter\ 5\example_using_structs\src\main.rs

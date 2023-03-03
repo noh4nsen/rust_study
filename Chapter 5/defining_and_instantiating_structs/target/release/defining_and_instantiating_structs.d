@@ -1,1 +1,0 @@
-C:\Users\noh4nsen\Desktop\Estudo\Rust\Rust_Official\Chapter\ 5\defining_and_instantiating_structs\target\release\defining_and_instantiating_structs.exe: C:\Users\noh4nsen\Desktop\Estudo\Rust\Rust_Official\Chapter\ 5\defining_and_instantiating_structs\src\main.rs
