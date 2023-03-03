@@ -1,20 +1,8 @@
-mod front_of_house {
-    pub mod hosting {
-        pub fn add_to_waitlist() {}
+use front_of_house::hosting;
+use std::fmt::Result;
+use std::io::Result as IoResult;
 
-        fn seat_at_table() {}
-    }
-
-    mod serving {
-        fn take_order() {}
-
-        fn server_order() {}
-        
-        fn take_payment() {}
-    }
-}
-
-fn deliver_order() {}
+mod front_of_house;
 
 mod back_of_house {
     pub enum Appetizer {
@@ -44,6 +32,14 @@ mod back_of_house {
     fn cook_order() {}
 }
 
+mod customer {
+    use crate::front_of_house::hosting;
+
+    pub fn eat_at_restaurant() {
+        hosting::add_to_waitlist();
+    }
+}
+
 pub fn eat_at_restaurant() {
     // Absolute path
     crate::front_of_house::hosting::add_to_waitlist();
@@ -57,4 +53,8 @@ pub fn eat_at_restaurant() {
 
     let order1 = back_of_house::Appetizer::Soup;
     let order2 = back_of_house::Appetizer::Salad;
+
+    hosting::add_to_waitlist();
 }
+
+fn deliver_order() {}
