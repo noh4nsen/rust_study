@@ -1,5 +1,5 @@
 [package]
-name = "packages_crates_and_modules"
+name = "ut8_with_strings"
 version = "0.1.0"
 edition = "2021"
 
