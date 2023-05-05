@@ -7,8 +7,7 @@ pub fn add_two(a: i32) -> i32 {
 }
 
 pub fn greeting(name: &str) -> String {
-    //format!("Hello {}!", name)
-    String::from("Hello!")
+    format!("Hello {}!", name)
 }
 
 #[derive(Debug)]
@@ -20,6 +19,20 @@ struct Rectangle {
 impl Rectangle {
     fn can_hold(&self, other: &Rectangle) -> bool {
         self.width > other.width && self.height > other.height
+    }
+}
+
+pub struct Guess {
+    value: i32,
+}
+
+impl Guess {
+    pub fn new(value: i32) -> Guess {
+        if value < 1 || value > 100 {
+            panic!("Guess value must be between 1 and 100, got {}.", value);
+        }
+
+        Guess { value }
     }
 }
 
@@ -84,5 +97,39 @@ mod tests {
             "Greeting did not contain name, value was `{}`",
             result
         );
+    }
+
+    #[test]
+    fn greeting_contains_complete_message() {
+        let result = greeting("Carol");
+        assert_eq!("Hello Carol!", result);
+    }
+
+    #[test]
+    #[should_panic(expected = "Guess value must be between 1 and 100, got 200.")]
+    fn greater_than_100_should_panic() {
+        Guess::new(200);
+    }
+
+    #[test]
+    fn it_works_2() {
+        let value;
+        if 2 + 2 == 4 {
+            value = Ok(());
+        } else {
+            value = Err(String::from("two plus two does not equal four"))
+        }
+        assert!(value.is_ok());
+    }
+
+    #[test]
+    fn it_doesnt_work() {
+        let value;
+        if 2 + 2 == 5 {
+            value = Ok(());
+        } else {
+            value = Err(String::from("two plus two does not equal four"))
+        }
+        assert!(value.is_err());
     }
 }
