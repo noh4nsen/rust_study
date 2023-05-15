@@ -1,6 +1,6 @@
 #[derive(Debug, PartialEq, Copy, Clone)]
 pub enum ShirtColor {
-    Red, 
+    Red,
     Blue,
 }
 
@@ -24,6 +24,10 @@ impl Inventory {
             }
         }
 
+        self.compare_quantity(num_red, num_blue)
+    }
+
+    fn compare_quantity(&self, num_red: i32, num_blue: i32) -> ShirtColor {
         if num_red > num_blue {
             ShirtColor::Red
         } else {
